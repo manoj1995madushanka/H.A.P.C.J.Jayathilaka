@@ -175,6 +175,11 @@ public class MainFrame extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("About");
+        jMenu2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu2ActionPerformed(evt);
+            }
+        });
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -207,6 +212,9 @@ public class MainFrame extends javax.swing.JFrame {
             b1.setText("X");
             x = 0;
         }
+         if(checkWin()==1){
+            ClearButtonTexts();
+         }
        
                 // TODO add your handling code here:
     }//GEN-LAST:event_b1ActionPerformed
@@ -218,7 +226,10 @@ public class MainFrame extends javax.swing.JFrame {
         }else{
             b2.setText("X");
             x = 0;
-        }// TODO add your handling code here:
+        }
+         if(checkWin()==1){
+            ClearButtonTexts();
+         }// TODO add your handling code here:
     }//GEN-LAST:event_b2ActionPerformed
 
     private void b4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b4ActionPerformed
@@ -228,7 +239,10 @@ public class MainFrame extends javax.swing.JFrame {
         }else{
             b4.setText("X");
             x = 0;
-        } // TODO add your handling code here:
+        }
+         if(checkWin()==1){
+            ClearButtonTexts();
+         }// TODO add your handling code here:
     }//GEN-LAST:event_b4ActionPerformed
 
     private void b5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b5ActionPerformed
@@ -238,7 +252,10 @@ public class MainFrame extends javax.swing.JFrame {
         }else{
             b5.setText("X");
             x = 0;
-        }// TODO add your handling code here:
+        }
+         if(checkWin()==1){
+            ClearButtonTexts();
+         }// TODO add your handling code here:
     }//GEN-LAST:event_b5ActionPerformed
 
     private void b3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b3ActionPerformed
@@ -248,7 +265,10 @@ public class MainFrame extends javax.swing.JFrame {
         }else{
             b3.setText("X");
             x = 0;
-        }// TODO add your handling code here:
+        }
+         if(checkWin()==1){
+            ClearButtonTexts();
+         }// TODO add your handling code here:
     }//GEN-LAST:event_b3ActionPerformed
 
     private void b7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b7ActionPerformed
@@ -258,7 +278,10 @@ public class MainFrame extends javax.swing.JFrame {
         }else{
             b7.setText("X");
             x = 0;
-        }// TODO add your handling code here:
+        }
+         if(checkWin()==1){
+            ClearButtonTexts();
+         }// TODO add your handling code here:
     }//GEN-LAST:event_b7ActionPerformed
 
     private void b6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b6ActionPerformed
@@ -268,7 +291,10 @@ public class MainFrame extends javax.swing.JFrame {
         }else{
             b6.setText("X");
             x = 0;
-        } // TODO add your handling code here:
+        }
+         if(checkWin()==1){
+            ClearButtonTexts();
+         }// TODO add your handling code here:
     }//GEN-LAST:event_b6ActionPerformed
 
     private void b9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b9ActionPerformed
@@ -278,7 +304,10 @@ public class MainFrame extends javax.swing.JFrame {
         }else{
             b9.setText("X");
             x = 0;
-        }// TODO add your handling code here:
+        }
+         if(checkWin()==1){
+            ClearButtonTexts();
+         }// TODO add your handling code here:
     }//GEN-LAST:event_b9ActionPerformed
 
     private void b8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b8ActionPerformed
@@ -288,7 +317,10 @@ public class MainFrame extends javax.swing.JFrame {
         }else{
             b8.setText("X");
             x = 0;
-        } // TODO add your handling code here:
+        } 
+         if(checkWin()==1){
+            ClearButtonTexts();
+         }// TODO add your handling code here:
     }//GEN-LAST:event_b8ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
@@ -303,14 +335,71 @@ public class MainFrame extends javax.swing.JFrame {
         }// TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
+    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
+                // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
    
-    void checkWin(){
+    int checkWin(){
+        if(b1.getText().equals(b2.getText())&&b1.getText().equals(b3.getText())&&b1.getText().equals("X wins")){
+             JOptionPane.showMessageDialog(JOptionPane.getFrameForComponent(b1), "0 wins");
+             return 1;
+        }else if(b1.getText().equals(b2.getText())&&b1.getText().equals(b3.getText())&&b1.getText().equals("0 wins")){
+             JOptionPane.showMessageDialog(JOptionPane.getFrameForComponent(b1), "X wins");
+             return 1;
+        }else if(b4.getText().equals(b5.getText())&&b4.getText().equals(b6.getText())&&b4.getText().equals("0 wins")){
+             JOptionPane.showMessageDialog(JOptionPane.getFrameForComponent(b4), "X wins");
+             return 1;
+         }else if(b4.getText().equals(b5.getText())&&b4.getText().equals(b6.getText())&&b4.getText().equals("X wins")){
+             JOptionPane.showMessageDialog(JOptionPane.getFrameForComponent(b4), "0 wins");
+             return 1;
+         }else if(b7.getText().equals(b8.getText())&&b7.getText().equals(b9.getText())&&b7.getText().equals("0 wins")){
+             JOptionPane.showMessageDialog(JOptionPane.getFrameForComponent(b4), "X wins");
+             return 1;
+         }else if(b7.getText().equals(b8.getText())&&b7.getText().equals(b9.getText())&&b7.getText().equals("X wins")){
+             JOptionPane.showMessageDialog(JOptionPane.getFrameForComponent(b7), "0 wins");
+             return 1;
+          }else if(b1.getText().equals(b5.getText())&&b1.getText().equals(b9.getText())&&b1.getText().equals("0 wins")){
+             JOptionPane.showMessageDialog(JOptionPane.getFrameForComponent(b7), "X wins");
+             return 1;
+         }else if(b1.getText().equals(b5.getText())&&b1.getText().equals(b9.getText())&&b1.getText().equals("X wins")){
+             JOptionPane.showMessageDialog(JOptionPane.getFrameForComponent(b1), "0 wins");
+             return 1;
+           }else if(b3.getText().equals(b5.getText())&&b3.getText().equals(b7.getText())&&b3.getText().equals("0 wins")){
+             JOptionPane.showMessageDialog(JOptionPane.getFrameForComponent(b3), "X wins");
+             return 1;
+         }else if(b3.getText().equals(b5.getText())&&b3.getText().equals(b7.getText())&&b3.getText().equals("X wins")){
+             JOptionPane.showMessageDialog(JOptionPane.getFrameForComponent(b3), "0 wins");
+             return 1;
+         }else {
+             
+         
+        
+        
+        
+        
+        
+        
+        }
         //check whether a player makes a win
+        return 0;
     }
-            public static void main(String args[]) {
+    
+    void ClearButtonTexts(){
+    b1.setText("");    
+    b2.setText("");
+    b3.setText("");
+    b4.setText("");
+    b5.setText("");
+    b6.setText("");
+    b7.setText("");
+    b8.setText("");
+    b9.setText("");
+    }      
+    public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -336,6 +425,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new MainFrame().setVisible(true);
             }
