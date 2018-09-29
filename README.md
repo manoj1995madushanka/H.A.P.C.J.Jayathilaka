@@ -1,2 +1,4 @@
 # H.A.P.C.J.Jayathilaka
-[Product Name]
+[Tak Tic Tuk]
+
+This is a simple game developed by java language.
